@@ -60,17 +60,19 @@ if(isset($_POST["submit"])) {
 		</script>
 	</head>
 	<body class="antialiased">
-		<main class="min-h-screen min-w-screen flex flex-col items-center justify-center">
-			<div id="toast" class="fixed top-2 left-2 bg-neutral-900 text-xs text-white py-4 px-6 z-10" style="display: none;">Copied to clipboard!</div>
-			<div class="lg:w-3/6 2xl:w-2/6 3xl:w-1/5">
-				<?php if(isset($result)): ?>
-					<div class="bg-neutral-100 p-8 mb-6">
-						<p id="result"><?= $result ?></p>
-						<div class="flex justify-end mt-8">
-							<button type="button" onclick="copyResult('<?= $result ?>');" class="border border-neutral-900 hover:bg-neutral-900 hover:text-white py-4 px-8">Copy</button>
-						</div>
+		<div id="toast" class="fixed top-2 left-2 bg-neutral-900 text-xs text-white py-4 px-6 z-10" style="display: none;">Copied to clipboard!</div>
+		<main class="min-h-screen min-w-screen flex flex-col lg:flex-row-reverse gap-8 items-center justify-center">
+			
+			<?php if(isset($result)): ?>
+				<div class="w-full lg:w-2/5 bg-neutral-100 p-8 mb-6">
+					<p id="result"><?= $result ?></p>
+					<div class="flex justify-end mt-8">
+						<button type="button" onclick="copyResult('<?= $result ?>');" class="border border-neutral-900 hover:bg-neutral-900 hover:text-white py-4 px-8">Copy</button>
 					</div>
-				<?php endif; ?>
+				</div>
+			<?php endif; ?>
+			
+			<div class="lg:w-3/6 2xl:w-2/6 3xl:w-1/5">
 				<form method="POST" action="" class="border border-neutral-900 px-8 py-10">
 					<h1 class="text-5xl font-bold mb-8">Templi</h1>
 					
